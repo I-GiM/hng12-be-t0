@@ -30,13 +30,11 @@ Response:
 
 ```
 {
-"status": 200,
-"message": "User details fetched successfully",
-"data": {
-"email": "ikennaoyiih@gmail.com",
-"current_datetime": "2025-02-03T12:59:23+01:00",
-"github_url": "https://github.com/I-GiM/hng12-be-t0"
-}
+    "status": 200,
+    "message": "User details fetched successfully",
+    "email": "ikennaoyiih@gmail.com",
+    "current_datetime": "2025-02-03T15:21:05+01:00",
+    "github_url": "https://github.com/I-GiM/hng12-be-t0"
 }
 
 ```

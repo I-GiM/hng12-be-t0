@@ -13,16 +13,18 @@ import (
 	"sync"
 )
 
-type Details struct {
-  Email string `json:"email"`
-  CurrentDateTime string `json:"current_datetime"`
-  GithubUrl string `json:"github_url"`
-}
+// type Details struct {
+//   Email string `json:"email"`
+//   CurrentDateTime string `json:"current_datetime"`
+//   GithubUrl string `json:"github_url"`
+// }
 
 type Response struct {
   Status int `json:"status"`
   Message string `json:"message"`
-  Data Details `json:"data"`
+  Email string `json:"email"`
+  CurrentDateTime string `json:"current_datetime"`
+  GithubUrl string `json:"github_url"`
 }
 
 var detMu sync.Mutex
@@ -61,11 +63,9 @@ func getDetails(w http.ResponseWriter, _ *http.Request)  {
   dt := Response{
     Status: 200,
     Message: "User details fetched successfully",
-    Data: Details{
-      Email:"ikennaoyiih@gmail.com",
-      CurrentDateTime: currentTime.Format(time.RFC3339),
-      GithubUrl:"https://github.com/I-GiM/hng12-be-t0",
-    },
+    Email:"ikennaoyiih@gmail.com",
+    CurrentDateTime: currentTime.Format(time.RFC3339),
+    GithubUrl:"https://github.com/I-GiM/hng12-be-t0",
   }
   details, err := json.Marshal(dt)
   if err != nil {
